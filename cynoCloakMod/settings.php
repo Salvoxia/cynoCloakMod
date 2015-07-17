@@ -29,22 +29,41 @@ if(isset($_POST["cloak"])) {
 	$cloak = config::get('cc_cloak');
 }
 
+if(isset($_POST["entosis"])) {
+	if($_POST["entosis"] == 'Yes') {
+		config::set('cc_entosis', true);
+		$entosis = true;
+	} else {
+		config::set('cc_entosis', false);
+		$entosis = false;
+	}
+	$settings_updated = true;
+} else {
+	$entosis = config::get('cc_entosis');
+}
+
 if($settings_updated) {
 	$html .= "<span style=\"color: orange;\">Settings Updated!</span>";
 }
 
 $html .= "
 	<form name='config' method='post' class='cynoCloakModSettings'>
-		<span style='display:inline-block; line-height:32px; position:relative; width:140px;'>Show fitted Cynos?</span>
+		<span style='display:inline-block; line-height:32px; position:relative; width:160px;'>Show fitted Cynos?</span>
 		<select name='cyno'>
 			<option ".($cyno ? "selected=true" : "")." value='Yes'>Yes</option>
 			<option ".(!$cyno ? "selected=true" : "")." value='No'>No</option>
 		</select>
 		<br/>
-		<span style='display:inline-block; line-height:32px; position:relative; width:140px;'>Show fitted Cloaks?</span>
+		<span style='display:inline-block; line-height:32px; position:relative; width:160px;'>Show fitted Cloaks?</span>
 		<select name='cloak'>
 			<option ".($cloak ? "selected=true" : "")." value='Yes'>Yes</option>
 			<option ".(!$cloak ? "selected=true" : "")." value='No'>No</option>
+		</select>
+		<br/>
+		<span style='display:inline-block; line-height:32px; position:relative; width:160px;'>Show fitted Entosis Links?</span>
+		<select name='entosis'>
+			<option ".($entosis ? "selected=true" : "")." value='Yes'>Yes</option>
+			<option ".(!$entosis ? "selected=true" : "")." value='No'>No</option>
 		</select>
 		<br/>
 		<input type='submit' value='Save' style='margin-top:8px;'/>

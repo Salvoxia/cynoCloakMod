@@ -5,6 +5,9 @@
 {if function_exists('getCloakList') && config::get('cc_cloak')}
 	{$cloaks = call_user_func('getCloakList')}
 {/if}
+{if function_exists('getEntosisList') && config::get('cc_entosis')}
+	{$entosises = call_user_func('getEntosisList')}
+{/if}
 
 <div class="kltable">
 	{section name=day loop=$killlist}
@@ -14,7 +17,7 @@
 		<table class="kb-table kb-kl-table kb-table-rows">
 			<thead>
 				<tr class="kb-table-header">
-					<td class="kl-shiptype" colspan="{if isset($cynos) || isset($cloaks)}3{else}2{/if}">Ship type</td>
+					<td class="kl-shiptype" colspan="{if isset($cynos) || isset($cloaks) || isset($entosises)}3{else}2{/if}">Ship type</td>
 					<td colspan="2" class="kl-victim">Victim</td>
 					<td class="kl-finalblow">Final blow</td>
 					<td class="kl-location">Location</td>
@@ -34,13 +37,16 @@
 						<td class="kb-table-imgcell">
 							<img src='{$k.victimshipimage}' style="width: 32px; height: 32px;" alt="" />
 						</td>
-						{if isset($cynos) || isset($cloaks)}
-							<td class="kl-cyno-cloak-mod{if isset($cloaks)} cloak{/if}{if isset($cynos)} cyno{/if}">
+						{if isset($cynos) || isset($cloaks) || isset($entosises)}
+							<td class="kl-cyno-cloak-mod{if isset($cloaks)} cloak{/if}{if isset($cynos)} cyno{/if}{if isset($entosises)} entosis{/if}">
 								{if isset($cloaks)}
-									<img src=http://image.eveonline.com/InventoryType/11370_32.png {if in_array({$k.id}, $cloaks)}style="opacity:1;"{/if} alt="" />
+									<img src=https://image.eveonline.com/InventoryType/11370_32.png {if in_array({$k.id}, $cloaks)}style="opacity:1;"{/if} alt="" />
 								{/if}
 								{if isset($cynos)}
-									<img src=http://image.eveonline.com/InventoryType/21096_32.png {if in_array({$k.id}, $cynos)}style="opacity:1;"{/if} alt="" />
+									<img src=https://image.eveonline.com/InventoryType/21096_32.png {if in_array({$k.id}, $cynos)}style="opacity:1;"{/if} alt="" />
+								{/if}
+								{if isset($entosises)}
+									<img src=https://image.eveonline.com/InventoryType/34593_32.png {if in_array({$k.id}, $entosises)}style="opacity:1;"{/if} alt="" />
 								{/if}
 							</td>
 						{/if}

@@ -1,7 +1,7 @@
 <?php
 $modInfo['cynoCloakMod']['name'] = "Cyno/Cloak Mod";
-$modInfo['cynoCloakMod']['abstract'] = "";
-$modInfo['cynoCloakMod']['about'] = "Tyr";
+$modInfo['cynoCloakMod']['abstract'] = "shows whether ships had Cynos/Cloaks/Entosis Links fitted on the front page";
+$modInfo['cynoCloakMod']['about'] = "Tyr, enhanced for Entosis Links by Salvoxia";
 
 event::register('home_assembling', 'cynoCloakMod::init');
 

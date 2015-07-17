@@ -3,17 +3,22 @@ td.kb-table-imgcell > img {
 }
 
 .kl-cyno-cloak-mod {
-	display: block;
 	margin-top:2px;
 	position: relative;
 }
 
-.kl-cyno-cloak-mod.cyno, .kl-cyno-cloak-mod.cloak {
+.kl-cyno-cloak-mod.cyno, .kl-cyno-cloak-mod.cloak, .kl-cyno-cloak-mod.entosis {
 	width: 24px;
 }
 
-.kl-cyno-cloak-mod.cyno.cloak {
+.kl-cyno-cloak-mod.cyno.cloak, .kl-cyno-cloak-mod.cyno.entosis, .kl-cyno-cloak-mod.cloak.entosis {
 	width: 48px;
+	display: block;
+}
+
+.kl-cyno-cloak-mod.cyno.cloak.entosis {
+	width: 72px;
+	display: block;
 }
 
 .kl-cyno-cloak-mod img {
