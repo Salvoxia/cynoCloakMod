@@ -85,13 +85,13 @@ INSERT AFTER:
 {if isset($cynos) || isset($cloaks) || isset($entosises)}
 	<td class="kl-cyno-cloak-mod{if isset($cloaks)} cloak{/if}{if isset($cynos)} cyno{/if}{if isset($entosises)} entosis{/if}">
 		{if isset($cloaks)}
-			<img src=http://image.eveonline.com/InventoryType/11370_32.png {if in_array($k.id, $cloaks)}style="opacity:1;"{/if} alt="" />
+			<img src=https://image.eveonline.com/InventoryType/11370_32.png {if in_array($k.id, $cloaks)}style="opacity:1;"{/if} alt="" />
 		{/if}
 		{if isset($cynos)}
-			<img src=http://image.eveonline.com/InventoryType/21096_32.png {if in_array($k.id, $cynos)}style="opacity:1;"{/if} alt="" />
+			<img src=https://image.eveonline.com/InventoryType/21096_32.png {if in_array($k.id, $cynos)}style="opacity:1;"{/if} alt="" />
 		{/if}
         {if isset($entosises)}
-			<img src=https://image.eveonline.com/InventoryType/34593_32.png {if in_array({$k.id}, $entosises)}style="opacity:1;"{/if} alt="" />
+			<img src=https://image.eveonline.com/InventoryType/34593_32.png {if in_array($k.id, $entosises)}style="opacity:1;"{/if} alt="" />
 		{/if}
 	</td>
 {/if}
