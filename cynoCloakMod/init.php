@@ -21,7 +21,7 @@ class cynoCloakMod {
 		//$home->page->addHeader("\t<script src='mods/cynoCloakMod/scroller.js' type='text/javascript'></script>");
 	}
 	
-	function load(){
+	public static function load(){
 		include_once('mods/cynoCloakMod/cynoCloakMod.php');
 		return "\t<!--cyno/cloak mod loaded-->";
 	}
