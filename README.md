@@ -1,6 +1,8 @@
 # cynoCloakMod
 Enhanced version of the Cyno Cloak Mod by Tyr for the Eve Development Killboard.
 
+Maintained by Salvoxia
+
 This mod adds items indicating fitted cyno/cloak/entosis link modules directly in the kill list table. It is designed for EDK v4.2 and higher.
 
 
@@ -28,8 +30,12 @@ This mod adds items indicating fitted cyno/cloak/entosis link modules directly i
 ###### 19.04.2014, v0.6:
 - updated to work with EDK 4.2+
 
-###### 17.07.1015, v.07
+###### 17.07.1015, v0.7
 - added Entosis Links
+
+###### 09.02.1015, v0.8
+- fixes for compatbility with PHP 7
+- fixes a display problem in Firefox if only two of three icons are displayed
 
 
 
