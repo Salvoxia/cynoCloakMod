@@ -13,6 +13,15 @@
 	{section name=day loop=$killlist}
 		{if $daybreak}
 			<div class="kb-date-header">{"l, F jS"|date:$killlist[day].date}</div><br />
+			{if isset($show_summary) && $show_summary}
+				<table class="kb-table kb-kl-table">
+					<tr class="kb-kl-table-summary">
+						{if $killlist[day].summary.numberOfKills > 0 || isset($killlist[day].summary.efficiency)}<td class="killcount">Kills: {$killlist[day].summary.numberOfKills}</td>{/if}
+						{if $killlist[day].summary.numberOfLosses > 0 || isset($killlist[day].summary.efficiency)}<td class="{if $killlist[day].summary.numberOfKills > 0 || isset($killlist[day].summary.efficiency)}kb-kl-summary-cell{/if} losscount">Losses: {$killlist[day].summary.numberOfLosses}</td>{/if}
+						{if isset($killlist[day].summary.efficiency)}<td class="kb-kl-summary-cell efficiency">Efficiency: {$killlist[day].summary.efficiency}%</td>{/if}
+					</tr>
+				</table>
+			{/if}
 		{/if}
 		<table class="kb-table kb-kl-table kb-table-rows">
 			<thead>
@@ -28,11 +37,11 @@
 					{assign var="k" value=$killlist[day].kills[kill]}
 					
 					{if $k.loss}
-						<tr class="kb-table-row-loss" onclick="window.location.href='{$k.urldetail}';">
+						<tr class="kb-table-row-loss {$k.highlight}" onclick="window.location.href='{$k.urldetail}';">
 						{elseif $k.kill}
-						<tr class="kb-table-row-kill" onclick="window.location.href='{$k.urldetail}';">
+						<tr class="kb-table-row-kill {$k.highlight}" onclick="window.location.href='{$k.urldetail}';">
 						{else}
-						<tr onclick="window.location.href='{$k.urldetail}';">
+						<tr class="{$k.highlight}" onclick="window.location.href='{$k.urldetail}';">
 						{/if}
 						<td class="kb-table-imgcell">
 							<img src='{$k.victimshipimage}' style="width: 32px; height: 32px;" alt="" />
@@ -91,6 +100,7 @@
 									<div class="kl-inv-comm">
 										{if $k.inv}<img src="{$theme_url}/img/involved10_10.png"  alt="I:" /> {$k.inv}{/if}
 										{if $comments_count}<span {if  !$k.commentcount}style="visibility: hidden"{/if}><img src="{$theme_url}/img/comment_white13_10.gif" alt="C:" /> {$k.commentcount}</span>{/if}
+										{if $k.externalid}<a href="{$k.urldetail}#disqus_thread" class="disqus-comment-count" data-disqus-identifier="{$k.externalid}"></a>{/if}
 									</div>
 								{/if}
 							<div class="kl-date">

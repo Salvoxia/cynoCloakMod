@@ -30,21 +30,22 @@ This mod adds items indicating fitted cyno/cloak/entosis link modules directly i
 ###### 19.04.2014, v0.6:
 - updated to work with EDK 4.2+
 
-###### 17.07.1015, v0.7
+###### 17.07.2015, v0.7
 - added Entosis Links
 
-###### 09.02.1015, v0.8
+###### 09.02.1016, v0.8
 - fixes for compatbility with PHP 7
 - fixes a display problem in Firefox if only two of three icons are displayed
 
-
+###### 09.09.2016, v0.9
+- the modified template is now injected automatically, it is compatible with the [highlight_capitals](https://github.com/Salvoxia/highlight_capitals) and [zkb_disqus](https://github.com/Salvoxia/zkb_disqus) mods
 
 ### Installation
 
 There are still some css issues depending on the used theme, especially with the width of the kill list table.
-Extract the mod folder from this archive to /mods/. Backup your killlisttable.tpl file from /themes/yourtheme/templates/
-and replace it with the one from this archive (only tested with default theme). If you're using a different theme and run
-into errors or have already made custom changes to the tpl file, you have to manually add the following lines:
+If you're using a different theme than one based on the default (regarding layout) and run
+into any problems or have already made custom changes to the tpl file, you have to copy your killlisttable.tpl from themes/yourtheme/templates 
+to mods/CynoCloakMod/templates, overwrite the existing one and manually add the following lines:
 
 FIND:
 ```html
@@ -111,4 +112,4 @@ Copyright @Tyranero, 2012.
 
 Contact admin@stryke.de for more, donations always welcomed to 'Tyranero' ingame.
 
-Enhanced by Salvoxia 2015
+Enhanced by Salvoxia 2016
