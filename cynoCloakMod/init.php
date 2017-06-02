@@ -1,5 +1,7 @@
 <?php
-$modInfo['cynoCloakMod']['name'] = "Cyno/Cloak Mod";
+define('CYNO_CLOAK_MOD_VERSION', '0.9');
+
+$modInfo['cynoCloakMod']['name'] = "Cyno/Cloak Mod v".CYNO_CLOAK_MOD_VERSION;
 $modInfo['cynoCloakMod']['abstract'] = "shows whether ships had Cynos/Cloaks/Entosis Links fitted on the front page";
 $modInfo['cynoCloakMod']['about'] = "Tyr, enhanced for Entosis Links by Salvoxia";
 
@@ -19,7 +21,7 @@ class cynoCloakMod {
 	
 	public static function loadCSS($home) 
 	{
-		$home->page->addHeader("\t<link rel=\"stylesheet\" type=\"text/css\" href=\"mods/cynoCloakMod/cynoCloakMod.css\" />");
+        $home->page->addHeader("\t<link rel=\"stylesheet\" type=\"text/css\" href=\"".config::get('cfg_kbhost')."/mods/cynoCloakMod/cynoCloakMod.css\" />");
 	}
 	
 	public static function load()
