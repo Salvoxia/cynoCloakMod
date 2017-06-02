@@ -40,6 +40,12 @@ This mod adds items indicating fitted cyno/cloak/entosis link modules directly i
 ###### 09.09.2016, v0.9
 - the modified template is now injected automatically, it is compatible with the [highlight_capitals](https://github.com/Salvoxia/highlight_capitals) and [zkb_disqus](https://github.com/Salvoxia/zkb_disqus) mods
 
+###### 02.06.2017, v0.9.1
+
+- Fix: Kill Lists show kill system security status in the proper color
+- Fix: Stylesheet inclusion when simple URLs are enabled and the page was called with URL parameters
+
+
 ### Installation
 
 There are still some css issues depending on the used theme, especially with the width of the kill list table.
